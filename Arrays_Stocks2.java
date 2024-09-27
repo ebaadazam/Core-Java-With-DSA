@@ -1,5 +1,5 @@
 // BEST TIME TO SELL STOCKS II
-package DSA_Arrays;
+
 class Arrays_Stocks2 {  
     
     public static int bestTimeToSellStocks(int[] prices){

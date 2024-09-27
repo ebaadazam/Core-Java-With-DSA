@@ -1,5 +1,5 @@
 // TWO SUM II: INPUT ARRAY IS SORTED
-package DSA_Arrays;
+
 public class Arrays_TwoSum2 {
     public static void twoSum2(int[] nums, int target) {
         int i = 0;

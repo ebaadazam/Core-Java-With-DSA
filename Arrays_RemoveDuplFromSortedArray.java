@@ -1,4 +1,3 @@
-package DSA_Arrays;
 // REMOVE DUPLICATES FROM THE SORTED ARRAY
 // return the number of elements left in the array after removing duplicates
 

@@ -1,4 +1,3 @@
-package DSA_Arrays;
 // REMOVE ELEMENT
 // Remove all occurrences of a particular number in an array and return the no of elements in nums which are not equal to val.
 

@@ -1,5 +1,5 @@
 // TWO SUM I
-package DSA_Arrays;
+
 import java.util.HashMap;
 public class Arrays_TwoSum1 {
     public static void twoSum(int[] nums, int target) {

@@ -1,4 +1,3 @@
-package DSA_Arrays;
 class Arrays_MissingNumber {
     private static int missingNum(int[] nums) {
         int n = nums.length+1;

@@ -1,5 +1,3 @@
-package DSA_Arrays;
-
 // GAS STATION
 
 /*
