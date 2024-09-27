@@ -1,3 +1,4 @@
+package DSA_Arrays;
 // CONTAINS DUPLICATE II
 // The difference of indices of two same values in the list should be less than or equal to k
 

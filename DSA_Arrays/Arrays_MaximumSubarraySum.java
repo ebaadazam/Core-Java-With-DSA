@@ -1,3 +1,5 @@
+package DSA_Arrays;
+
 class Arrays_MaximumSubarraySum {
     
     private static int maxSubarraySum(int[] nums) {

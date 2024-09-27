@@ -1,3 +1,4 @@
+package DSA_Arrays;
 class Arrays_PalindromeArray {
     private static boolean isValidPalindrome(int[] nums) {
         for (int i = 0; i < nums.length; i++) {

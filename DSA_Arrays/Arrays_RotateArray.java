@@ -1,5 +1,6 @@
 // ROTATE ARRAY
 
+package DSA_Arrays;
 import java.util.Arrays;
 
 class Arrays_RotateArray {

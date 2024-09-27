@@ -1,5 +1,5 @@
 // TRAPPING RAINWATER
-
+package DSA_Arrays;
 class Arrays_TrappingRainwater {
 
     public static int trap(int[] height) {

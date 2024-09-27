@@ -1,3 +1,4 @@
+package DSA_Arrays;
 class Arrays_MinimumSizeSubarraySum {
 
     private static int minSubarray(int[] nums, int target) {
