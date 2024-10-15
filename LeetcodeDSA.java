@@ -421,47 +421,36 @@
 
 
 
+// valid anagram
+public class LeetcodeDSA {
+    public static boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
 
-// public class LeetcodeDSA {
-//     public static boolean isAnagram(String s, String t) {
-//         // If lengths are not equal, they cannot be anagrams
-//         if (s.length() != t.length()) {
-//             return false;
-//         }
+        int[] charCount = new int[26];
 
-//         // Array to hold frequency count of characters
-//         int[] charCount = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            charCount[s.charAt(i) - 'a']++;
+            charCount[t.charAt(i) - 'a']--;
+        }
 
-//         // Count frequencies in s and t
-//         for (int i = 0; i < s.length(); i++) {
-//             charCount[s.charAt(i) - 'a']++;  // Increment count for s
-//             charCount[t.charAt(i) - 'a']--;  // Decrement count for t
-//         }
-
-//         for (int i : charCount) {
-//             System.out.println(i);
-//         }
-
-//         // Check if all counts are zero
-//         for (int count : charCount) {
-//             if (count != 0) {
-//                 return false;
-//             }
-//         }
-
-//         return true;  // They are anagrams
-//     }
-
-//     public static void main(String[] args) {
-//         String s1 = "anagram";
-//         String t1 = "nagaram";
-//         System.out.println(isAnagram(s1, t1));  // Output: true
-
-//         String s2 = "rat";
-//         String t2 = "car";
-//         System.out.println(isAnagram(s2, t2));  // Output: false
-//     }
-// }
+        for (int count : charCount) {
+            if (count != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        String s1 = "anagram";
+        String t1 = "nagaram";
+        System.out.println(isAnagram(s1, t1));
+        String s2 = "rat";
+        String t2 = "car";
+        System.out.println(isAnagram(s2, t2));
+    }
+}
 
 
 // RANSOM NOTE
@@ -496,9 +485,7 @@
 // }
 
 
-
-
-
+// longest consecutive string
 // import java.util.Arrays;
 // import java.util.Set;
 // import java.util.stream.Collectors;
@@ -507,11 +494,9 @@
 //         if (nums == null || nums.length == 0) {
 //             return 0;
 //         }
-
 //         // Convert array to a set to remove duplicates and for O(1) lookups
 //         Set<Integer> numSet = Arrays.stream(nums).boxed().collect(Collectors.toSet());
 //         int maxCount = 0;
-
 //         for (int i = 0; i < numSet.size(); i++) {
 //             if (!numSet.contains(nums[i] - 1)) {
 //                 int count = 0;
@@ -524,7 +509,6 @@
 //         }
 //         return maxCount;
 //     }
-
 //     public static void main(String[] args) {
 //         int[] nums = {100, 4, 200, 1, 3, 2};
 //         System.out.println(longestConsecutive(nums)); // Output should be 4
@@ -559,7 +543,6 @@
 //         for (int i = 0; i < length; i++) {
 //             int v1 = i < levels1.length ? Integer.parseInt(levels1[i]) : 0;
 //             int v2 = i < levels2.length ? Integer.parseInt(levels2[i]) : 0;
-
 //             if (v1 < v2) {
 //                 return -1;
 //             }
@@ -567,10 +550,8 @@
 //                 return 1;
 //             }
 //         }
-
 //         return 0;
 //     }
-
 //     public static void main(String[] args) {
 //         String str = "12.23.4 12.1.1";
 //         String res = biggerString(str);
