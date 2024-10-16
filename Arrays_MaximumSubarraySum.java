@@ -1,3 +1,5 @@
+// Kadane’s Algorithm 
+// Kadane's Algorithm is a famous algorithm used to solve the Maximum Subarray Problem, which aims to find the contiguous subarray within a one-dimensional numeric array that has the largest sum.
 class Arrays_MaximumSubarraySum {
     
     private static int maxSubarraySum(int[] nums) {
@@ -7,13 +9,11 @@ class Arrays_MaximumSubarraySum {
         for(int i=0; i < nums.length; i++) {
             sum += nums[i];
 
-            if(sum > maxSum) {
-                maxSum = sum;
-            }
+            maxSum = Math.max(maxSum, sum);
 
-            if(sum < 0) { 
-                sum = 0;           
-            }
+            if(sum < 0) {
+                sum = 0;
+            }  
         }
         return maxSum;
     }

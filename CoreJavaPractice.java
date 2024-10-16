@@ -1,17 +1,21 @@
-import java.util.Arrays;
-public class CoreJavaPractice {
-    public static String reverse(String s) {
-       char[] ch = s.toCharArray();
-       for (int i = 0; i < ch.length/2; i++) {
-         char temp = ch[i];
-         ch[i] = ch[ch.length-1-i];
-         ch[ch.length-1-i] = temp;
-       }
-       return new String(ch);
+// trapping rainwater
+// minimum size subarray sum
+// maximum subarray sum
+// longest consequetive sequence
+
+class CoreJavaPractice {
+    private static int sample(int[] nums) {
+        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        for(int i=0; i < nums.length; i++) {
+            sum += nums[i];
+            maxSum = Math.max(maxSum, sum);
+            if(sum < 0) { sum = 0; }           
+        }
+        return maxSum;
     }
     public static void main(String[] args) {
-        String s = "Ebaad Azam";
-        String s2 = reverse(s);
-        System.out.println(s2);
-    }
+        int[] nums = {2, 3, 1, 2, 4, 3};
+        int target = 7;
+    }    
 }
