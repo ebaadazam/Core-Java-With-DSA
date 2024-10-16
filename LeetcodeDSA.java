@@ -359,20 +359,19 @@
 
 // length of last word 
 // class LeetcodeDSA {
-//     private static int lengthOfLastWord(String str){
-//        int count=0;
-//        str = str.trim();
-//         for (int i = str.length()-1; i > 0; i--) {
-//             if (str.charAt(i)==' ') {
-//                 break;            
-//             }  count++;
+//     public static int lastWordLength(String str){
+//         int count=0;
+//         for(int i = str.length()-1; i > 0; i--){
+//             if (str.charAt(i) != ' ') {
+//                 count++; }
+//             else if(str.charAt(i) == ' ' && count != 0){
+//                 break;   }
 //         }
 //         return count;
 //     }
 //     public static void main(String[] args) {
-//         String s = "Hello World  ";
-//         int length = lengthOfLastWord(s);
-//         System.out.println(length); }  }
+//         String str = "  Hello   world    ";
+//         System.out.println(lastWordLength(str)); } }
 
 
 // isSubsequence
