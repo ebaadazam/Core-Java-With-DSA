@@ -403,157 +403,82 @@
 //         String haystack = "bttbutsadbut";
 //         String needle = "but";
 //         int[] index = findIndex(haystack, needle);
-//         System.out.println(index[0] + " " + index[1]); } }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//         System.out.println(index[0] + " " + index[1]); }
 
 
 // valid anagram
-public class LeetcodeDSA {
-    public static boolean isAnagram(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
-
-        int[] charCount = new int[26];
-
-        for (int i = 0; i < s.length(); i++) {
-            charCount[s.charAt(i) - 'a']++;
-            charCount[t.charAt(i) - 'a']--;
-        }
-
-        for (int count : charCount) {
-            if (count != 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-    public static void main(String[] args) {
-        String s1 = "anagram";
-        String t1 = "nagaram";
-        System.out.println(isAnagram(s1, t1));
-        String s2 = "rat";
-        String t2 = "car";
-        System.out.println(isAnagram(s2, t2));
-    }
-}
-
-
-// RANSOM NOTE
 // import java.util.HashMap;
 // import java.util.Map;
-// class LeetcodeDSA {
-//     public static boolean isRansomNote(String ransomNote, String magazine) {
-//         Map<Character, Integer> map = new HashMap<>();
-
-//         // Count the frequency of each character in the magazine
-//         for (char c : magazine.toCharArray()) {
-//             map.put(c, map.getOrDefault(c, 0) + 1);
-//         }
-
-//         // Now HashMap would look something like this {a = 2, b = 1}
-
-//         // Check if the ransomNote can be constructed from the magazine
-//         for (char c : ransomNote.toCharArray()) {
-//             if (!map.containsKey(c) || map.get(c) <= 0) {
-//                 return false;
-//             }
-//             map.put(c, map.get(c) - 1);
-//         }
-//         return true;
+// public class LeetcodeDSA {
+//     public static boolean isAnagram(String s, String t) {
+//         if (s.length() != t.length()) return false;
+//         Map<Character, Integer> mapS = new HashMap<>();
+//         Map<Character, Integer> mapT = new HashMap<>();
+//         for(Character c : s.toCharArray()) {
+//             mapS.put(c, mapS.getOrDefault(c,0)+1); }
+//         for(Character c2 : t.toCharArray()) {
+//             mapT.put(c2, mapT.getOrDefault(c2,0)+1); }
+//         return mapS.equals(mapT);
 //     }
-
 //     public static void main(String[] args) {
-//         String ransomNote = "aa";
-//         String magazine = "aab";
-//         System.out.println(isRansomNote(ransomNote, magazine)); // Output should be true
-//     }
+//         String s1 = "anagram";
+//         String t1 = "nagaram";
+//         System.out.println(isAnagram(s1, t1)); } }
+
+
+// ransomNote
+// import java.util.HashMap;
+// import java.util.Map;
+// class CoreJavaPractice {
+//     private static boolean sample(String ransomNote, String magazine) {
+//         Map<Character, Integer> mapMagazine = new HashMap<>();
+//         for (Character c : magazine.toCharArray()) {
+//             mapMagazine.put(c, mapMagazine.getOrDefault(c, 0)+1);
+//         } 
+//         for (char c : ransomNote.toCharArray()) {
+//             if (!mapMagazine.containsKey(c) || mapMagazine.get(c) == 0) {
+//                 return false; }
+//             mapMagazine.put(c, mapMagazine.get(c) - 1);
+//         }
+//        return true; }
+//     public static void main(String[] args) {
+//       String ransomNote = "aa";
+//       String magazine = "aab";
+//       System.out.println(sample(ransomNote, magazine));
+//     }    
 // }
 
 
-// longest consecutive string
-// import java.util.Arrays;
+// longest consequetive sequence
+// import java.util.HashSet;
 // import java.util.Set;
-// import java.util.stream.Collectors;
-// class LeetcodeDSA {
-//     public static int longestConsecutive(int[] nums) {
-//         if (nums == null || nums.length == 0) {
-//             return 0;
-//         }
-//         // Convert array to a set to remove duplicates and for O(1) lookups
-//         Set<Integer> numSet = Arrays.stream(nums).boxed().collect(Collectors.toSet());
+// class CoreJavaPractice {
+//     private static int sample(int[] nums){
 //         int maxCount = 0;
-//         for (int i = 0; i < numSet.size(); i++) {
-//             if (!numSet.contains(nums[i] - 1)) {
-//                 int count = 0;
-
-//                 while (numSet.contains(nums[i] + count)) {
-//                     count++;
-//                 }
-//                 maxCount = Math.max(maxCount, count);
-//             }
-//         }
-//         return maxCount;
-//     }
+//         Set<Integer> set = new HashSet<>();
+//         for (Integer val : nums) {
+//             set.add(val); }
+//         for (int num : set) {
+//             if (!set.contains(num - 1)) {
+//                 int count = 1;
+//                 while (set.contains(num + 1)) {
+//                     num++;
+//                     count++; }
+//                 maxCount = Math.max(maxCount, count); } }
+//         return maxCount; }
 //     public static void main(String[] args) {
 //         int[] nums = {100, 4, 200, 1, 3, 2};
-//         System.out.println(longestConsecutive(nums)); // Output should be 4
-//     }
-// }
+//         System.out.println(sample(nums)); } }
 
 
 
 
-// FIND THE BIGGEST VERSION
-// class LeetcodeDSA {
 
-//     public static String biggerString(String str) {
-//         String[] versions = str.split(" ");
-//         String version1 = versions[0];
-//         String version2 = versions[1];
 
-//         // Compare the two versions using the compareVersions method
-//         int result = compareVersions(version1, version2);
 
-//         // Return the bigger version
-//         return result > 0 ? version1 : version2;
-//     }
 
-//     // Method to compare two versions
-//     public static int compareVersions(String version1, String version2) {
-//         String[] levels1 = version1.split("\\.");
-//         String[] levels2 = version2.split("\\.");
 
-//         int length = Math.max(levels1.length, levels2.length);
 
-//         for (int i = 0; i < length; i++) {
-//             int v1 = i < levels1.length ? Integer.parseInt(levels1[i]) : 0;
-//             int v2 = i < levels2.length ? Integer.parseInt(levels2[i]) : 0;
-//             if (v1 < v2) {
-//                 return -1;
-//             }
-//             if (v1 > v2) {
-//                 return 1;
-//             }
-//         }
-//         return 0;
-//     }
-//     public static void main(String[] args) {
-//         String str = "12.23.4 12.1.1";
-//         String res = biggerString(str);
-//         System.out.println(res);  // Output: 12.1.1
-//     }
-// }
+
+
+
