@@ -357,6 +357,43 @@
 //         System.out.println(res); }  }
 
 
+// happy number
+// import java.util.HashSet;
+// import java.util.Set;
+// public class Arrays_HappyNumber{
+//     private static int sumOfSquares(int num){
+//         int sum = 0;
+//         while (num > 0) {
+//             int rem = num % 10;
+//             sum += (rem * rem);
+//             num /= 10; }
+//         return sum; }
+//     private static boolean happy(int num) {
+//         Set<Integer> set = new HashSet<>();
+//         while (num != 1 && !set.contains(num)) {
+//             set.add(num);
+//             num = sumOfSquares(num); }
+//         return num == 1; }
+//     public static void main(String[] args) {
+//         int num = 19;
+//         System.out.println(num + (happy(num) ? " is a Happy Number!" : " is not a Happy Number.")); } }
+
+
+// peak element
+// class LeetcodeDSA {
+//     public static int findPeakElement(int[] nums) {
+//         int n = nums.length;
+//         if(n==1 || nums[0] >= nums[1]) { return 0; }
+//         else if(nums[n-1] >= nums[n-2]){ return n-1; }
+//         for(int i=1; i < n; i++){
+//             if(nums[i] > nums[i+1] && nums[i] > nums[i-1]) { return i; }
+//         }
+//         return -1; }
+//     public static void main(String[] args) {
+//         int[] nums = {1, 2, 3, 1};
+//         System.out.println(findPeakElement(nums)); } }
+
+
 // length of last word 
 // class LeetcodeDSA {
 //     public static int lastWordLength(String str){
