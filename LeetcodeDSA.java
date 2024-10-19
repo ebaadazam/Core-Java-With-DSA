@@ -394,6 +394,31 @@
 //         System.out.println(findPeakElement(nums)); } }
 
 
+// find first and last position of element in sorted array
+// import java.util.ArrayList;
+// import java.util.List;
+// public class CoreJavaPractice {
+//     private static List<Integer> sample(int[] nums, int target) {
+//         int left = 0, right = nums.length - 1;
+//         int[] result = new int[]{-1, -1};
+//         while (left <= right) {
+//            if (nums[left] == target) {
+//             result[0] = left;
+//             break;
+//            } left++;
+//         }
+//         while (left <= right) {
+//             if (nums[right] == target) {
+//                 result[1] = right;
+//              break;
+//             } right--; }
+//         return result; }
+//     public static void main(String[] args) {
+//         int[] nums = {5, 7, 7, 8, 8, 10, 7, 2};
+//         int target = 7;
+//         System.out.println(sample(nums, target)); } }
+
+
 // length of last word 
 // class LeetcodeDSA {
 //     public static int lastWordLength(String str){
@@ -409,6 +434,21 @@
 //     public static void main(String[] args) {
 //         String str = "  Hello   world    ";
 //         System.out.println(lastWordLength(str)); } }
+
+
+// reverse words in a string
+// class LeetcodeDSA {
+//     private static String reverseWords(String s) {
+//         String[] str = s.trim().split("\\s+");
+//         StringBuilder reversedStr = new StringBuilder();
+//         for(int i=str.length-1; i>=0; i--){
+//             reversedStr.append(str[i]);
+//             if (i != 0) { reversedStr.append(" "); }
+//         }
+//         return reversedStr.toString(); }
+//     public static void main(String[] args) {
+//         String s = "   the sky is blue  ";
+//         System.out.println(reverseWords(s)); } }
 
 
 // isSubsequence
