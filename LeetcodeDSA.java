@@ -419,6 +419,51 @@
 //         System.out.println(sample(nums, target)); } }
 
 
+// sort the array of 0, 1 and 2
+// import java.util.Arrays;
+// public class Arrays_SortArrayOf012 {
+//     public static void sortArray(int[] nums){
+//         int left = 0, mid = 0, right = nums.length-1;
+//         while (mid <= right) {
+//             if (nums[mid] == 0) {
+//                 int temp = nums[left];
+//                 nums[left] = nums[mid];
+//                 nums[mid] = temp;
+//                 left++; mid++; }
+//             else if (nums[mid] == 1) {
+//                 mid++; }
+//             else if(nums[mid] == 2){
+//                 int temp = nums[mid];
+//                 nums[mid] = nums[right];
+//                 nums[right] = temp;
+//                 right--; } } }
+//     public static void main(String[] args) {
+//         int[] nums = {1, 0, 2, 1, 0, 2, 1, 0, 1, 2};
+//         sortArray(nums);
+//         System.out.println(Arrays.toString(nums)); } }
+
+
+// most repetitive element in the array
+// import java.util.HashMap;
+// import java.util.HashSet;
+// import java.util.Map;
+// import java.util.Set;
+// public class Arrays_MostRepetitiveElement {
+//     public static int sample(int[] nums){
+//         int maxItem = 0;
+//         int mostMax = nums[0];
+//         Map<Integer,Integer> map = new HashMap<>();
+//         for (Integer i : nums) {
+//             map.put(i, map.getOrDefault(i, 0)+1);
+//             if (map.get(i) > maxItem) {
+//                 maxItem = map.get(i);
+//                 mostMax = i; } }
+//         return mostMax; }
+//     public static void main(String[] args) {
+//         int[] nums = {4, 3, 2, 2, 6, 4, 7, 2, 7, 7, 8, 4, 2};
+//         System.out.println(sample(nums)); } }
+
+
 // length of last word 
 // class LeetcodeDSA {
 //     public static int lastWordLength(String str){
