@@ -464,6 +464,27 @@
 //         System.out.println(sample(nums)); } }
 
 
+// majority element
+// class Arrays_MajorityElement {
+//     public static int majorityElement(int[] nums){
+//         int count = 0, element = 0;
+//         for (int num : nums) {
+//             if (count == 0) {
+//                 count=1;
+//                 element = num; }
+//             else if (element == num) { count++; }
+//             else{  count--; }
+//         }
+//         int cnt = 0;
+//         for (int n : nums) {
+//             if (n == element) { cnt++; }
+//         }
+//         return cnt > nums.length / 2 ? element : -1; }
+//     public static void main(String[] args) {
+//         int[] nums = {3, 2, 3};
+//         System.out.println(majorityElement(nums)); } }
+
+
 // length of last word 
 // class LeetcodeDSA {
 //     public static int lastWordLength(String str){
