@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 class MergeSort {
     private static void mergeSort(int[] nums, int left, int right) {
@@ -51,15 +52,11 @@ class MergeSort {
         int nums[] = {5, 2, 1, 3, 1, 2, 4, 8, 7};
 
         // Array before mergeSort
-        for (int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i] + " ");
-        } System.out.println();
+        System.out.println(Arrays.toString(nums));
 
         mergeSort(nums, 0, nums.length-1);
 
         // Array after mergeSort
-        for (int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i] + " ");
-        }
+        System.out.println(Arrays.toString(nums));
     }
 }

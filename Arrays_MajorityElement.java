@@ -1,26 +1,20 @@
 // Without extra space
+// Moore's Voting Algorithm
 class Arrays_MajorityElement {
     public static int majorityElement(int[] nums){
-        int count = 0, element = 0;
-        for (int num : nums) {
-            if (count == 0) {
-                count=1;
-                element = num;
+        int candidate=0;
+        int count=0;
+        for(int i=0; i<nums.length; i++){
+            if(count == 0){
+                candidate = nums[i];
             }
-            else if (element == num) {
+            if(candidate == nums[i]){
                 count++;
-            }
-            else{
+            } else{
                 count--;
             }
         }
-        int cnt = 0;
-        for (int n : nums) {
-            if (n == element) {
-                cnt++;
-            }
-        }
-        return cnt > nums.length / 2 ? element : -1;
+        return candidate;
     }
     public static void main(String[] args) {
         int[] nums = {3, 2, 3};

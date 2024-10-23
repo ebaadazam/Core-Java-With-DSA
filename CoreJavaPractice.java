@@ -1,27 +1,48 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-class CoreJavaPractice {
-    public static int majorityElement(int[] nums){
-        // Storing keys along with values into the map
-        Map<Integer,Integer> map = new HashMap<>();
-        for (int n : nums) {
-            map.put(n, map.getOrDefault(n, 0)+1);
+public class CoreJavaPractice {
+    public static void sort(int[] nums, int l, int r){
+        if (l >= r) {
+            return;
         }
-        
-        map.forEach((k,v)->System.out.println(k+":"+v)); // just printing the map elements
-        
-        // Extracting the values from the map and check if it is greater than n/2
-        for(Map.Entry<Integer,Integer> entry : map.entrySet()){
-            if(entry.getValue() > nums.length/2){
-                return entry.getKey();
+        int mid = (l + r)/2;
+        sort(nums, l, mid);
+        sort(nums, mid+1, r);
+        merge(nums, l, mid, r);
+    }
+
+    public static void merge(int[] nums, int l, int mid, int r){
+        int i = l;
+        int j = mid+1;
+        List<Integer> arr = new ArrayList<>();
+        while (i <= mid && j <= r) {
+            if (nums[i] <= nums[j]) {
+                arr.add(nums[i]);
+                i++;
+            } else {
+                arr.add(nums[j]);
+                j++;
             }
         }
-        return -1;
+        while (i <= mid) {
+            arr.add(nums[i]);
+            i++;
+        }
+        while (j <= r) {
+            arr.add(nums[j]);
+            j++;
+        }
+
+        for (int k = 0; k < arr.size(); k++) {
+            nums[l+k] = arr.get(k);
+        }
     }
+
     public static void main(String[] args) {
-        int[] nums = {3, 2, 3};
-        System.out.println(majorityElement(nums));
+        int[] nums = {4, 2, 6, 1, 0, 2, 9, 8};
+        sort(nums, 0, nums.length-1);
+        System.out.println(Arrays.toString(nums));
     }    
 }

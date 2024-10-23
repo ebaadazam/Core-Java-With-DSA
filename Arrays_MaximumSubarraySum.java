@@ -13,7 +13,7 @@ class Arrays_MaximumSubarraySum {
 
             if(sum < 0) {
                 sum = 0;
-            }  
+            }        
         }
         return maxSum;
     }
