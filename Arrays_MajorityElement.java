@@ -23,7 +23,7 @@ class Arrays_MajorityElement {
 }
 
 
-// With extra space
+// With extra space - Map
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
