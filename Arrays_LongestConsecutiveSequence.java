@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-class String_LongestConsecutiveSequence {
+class Arrays_LongestConsecutiveSequence {
     private static int sample(int[] nums){
         int maxCount = 0;
         

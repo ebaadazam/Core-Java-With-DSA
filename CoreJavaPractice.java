@@ -1,48 +1,35 @@
+//--------dependencies--------
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
-public class CoreJavaPractice {
-    public static void sort(int[] nums, int l, int r){
-        if (l >= r) {
-            return;
-        }
-        int mid = (l + r)/2;
-        sort(nums, l, mid);
-        sort(nums, mid+1, r);
-        merge(nums, l, mid, r);
-    }
+class CoreJavaPractice {
+    public static int sample(int[] nums) {
 
-    public static void merge(int[] nums, int l, int mid, int r){
-        int i = l;
-        int j = mid+1;
-        List<Integer> arr = new ArrayList<>();
-        while (i <= mid && j <= r) {
-            if (nums[i] <= nums[j]) {
-                arr.add(nums[i]);
-                i++;
-            } else {
-                arr.add(nums[j]);
-                j++;
-            }
+        // ------------start-------------
+        int n = 0;
+        for (int i : nums) {
+            n = n * 10 + i;
         }
-        while (i <= mid) {
-            arr.add(nums[i]);
-            i++;
-        }
-        while (j <= r) {
-            arr.add(nums[j]);
-            j++;
-        }
+        int n2 = n+1;
+        return n2;
+        // ------------end--------------
 
-        for (int k = 0; k < arr.size(); k++) {
-            nums[l+k] = arr.get(k);
-        }
     }
 
     public static void main(String[] args) {
-        int[] nums = {4, 2, 6, 1, 0, 2, 9, 8};
-        sort(nums, 0, nums.length-1);
-        System.out.println(Arrays.toString(nums));
-    }    
+
+        // -------------start------------
+        int[] nums = {1, 2, 3};
+        System.out.println(sample(nums));
+        // -------------end--------------
+
+    }
 }

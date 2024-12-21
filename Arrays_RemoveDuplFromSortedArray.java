@@ -17,7 +17,7 @@ class Arrays_RemoveDuplFromSortedArray {
         return Arrays.copyOfRange(nums, 0, k+1);
     }
     public static void main(String[] args) {
-        int[] nums = {0, 0, 1, 1, 1, 2, 4, 4, 6, 7, 7, 8, 8, 8};
+        int[] nums = {0,1,2,2,3,0,4,2};
         int[] res = removeDupl(nums);
         System.out.println(Arrays.toString(res));
     }

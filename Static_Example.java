@@ -1,37 +1,26 @@
-class Sample {
-
-    // static block
-    static {
-        System.out.println("Static block");
-    }
-
-    // constructor
-    Sample() {
-        System.out.println("Constructor");
-    }
+class Static_Example {
 
     // static variable
-    public static int count = 10;
+    static int count = 0;
 
-    // static method
-    public static void increment(){
-        count++;
+    // constructor
+    Static_Example(){
+        count+=1;
     }
 
-    // normal method
-    public int getCount() {
-        return count;
+    // method to show the value of count
+    static void showCount() {
+        System.out.println("Counter: " + count);
     }
-}
 
-class Static_Example {
     public static void main(String[] args) {
-        Sample obj1 = new Sample();
-        Sample obj2 = new Sample();
-        Sample.increment();
-        Sample.increment();
-        Sample.increment();
-        System.out.println("Count (obj1): " + obj1.getCount());
-        System.out.println("Count (obj2): " + obj2.getCount());
+        Static_Example.showCount();
+
+        Static_Example obj = new Static_Example();
+        Static_Example obj2 = new Static_Example();
+        Static_Example obj3 = new Static_Example();
+
+        Static_Example.showCount();
+
     }
 }
