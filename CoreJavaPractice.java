@@ -1,3 +1,4 @@
+
 //--------dependencies--------
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,15 +12,11 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 class CoreJavaPractice {
+    // maximum subarray sum
     public static int sample(int[] nums) {
 
         // ------------start-------------
-        int n = 0;
-        for (int i : nums) {
-            n = n * 10 + i;
-        }
-        int n2 = n+1;
-        return n2;
+        
         // ------------end--------------
 
     }
@@ -27,8 +24,9 @@ class CoreJavaPractice {
     public static void main(String[] args) {
 
         // -------------start------------
-        int[] nums = {1, 2, 3};
-        System.out.println(sample(nums));
+        int[] nums =  {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] res = sample(nums);
+        System.out.println(Arrays.toString(res));
         // -------------end--------------
 
     }

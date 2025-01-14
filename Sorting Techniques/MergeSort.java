@@ -19,6 +19,7 @@ class MergeSort {
     }
 
     private static void merge(int[] nums, int left, int mid, int right) {
+        // Pointing both variables at first position of both arrays
         int i = left;
         int j = mid + 1;
 

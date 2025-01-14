@@ -15,7 +15,7 @@ class String_LengthOfLastWord {
         return count;
     }
     public static void main(String[] args) {
-        String str = "  Hello   world    ";
+        String str = "  Hello   wordld ";
         System.out.println(lastWordLength(str));
     }
 }

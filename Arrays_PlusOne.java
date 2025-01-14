@@ -8,7 +8,7 @@ public class Arrays_PlusOne {
                 nums[i]++;
                 return nums;
             }
-            nums[i] = 0;
+            nums[i] = 0; 
         }
 
         // if nums is [9, 9, 9] or [9, 9] or [9], we add 1 at start
