@@ -11,6 +11,8 @@ class Arrays_LongestConsecutiveSequence {
             set.add(val);
         }
 
+        System.out.println("set: " + set);
+
         for (int num : set) {
             // If it is not the start of the sequence
             if (!set.contains(num - 1)) {

@@ -39,3 +39,10 @@ class Arrays_PalindromeNumber {
     }
 }
 
+
+// We could have also used this to convert an Integer into Array of Integers
+// Convert the integer to a string, split it into characters, and then convert each character back to an integer
+// int[] result = String.valueOf(num)
+//                      .chars() // Stream of char values
+//                      .map(Character::getNumericValue) // Convert char to its numeric value
+//                      .toArray(); // Collect into an int array
