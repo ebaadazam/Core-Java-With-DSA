@@ -7,35 +7,38 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+// string questions
+// ransome note
+// valid anagram
 class CoreJavaPractice {
-    public static int sample(int[] nums) {
-        // LCS
+    public static String sample(String s, int k) {
         // ------------start-------------
-        Set<Integer> set = new HashSet<>();
-        for (Integer i : nums) { set.add(i); }
-        int maxCount = Integer.MIN_VALUE;
-        for (Integer n : set) {
-            if (!set.contains(n-1)) {
-                int count = 1;
-                while (set.contains(n+1)) {
-                    count++; n++;
-                }
-                maxCount = Math.max(maxCount, count);
-            }
+        char[] ch = s.toCharArray();
+        int n = ch.length;
+        int i = 0;
+        int j = k;
+        while(k > 0) {
+            char temp = ch[i];
+            ch[i] = ch[j];
+            ch[j] = temp;
+            i++; j--;
+            k--;
         }
-        return maxCount;
+        return s;
         // ------------end--------------
     }
 
     public static void main(String[] args) {
 
         // -------------start------------
-        int[] nums = {100, 4, 200, 1, 3, 2};
-        System.out.println(sample(nums));
+        String s = "abcdefg";
+        int k = 2;
+        System.out.println(sample(s, k));
         // -------------end--------------
 
     }
