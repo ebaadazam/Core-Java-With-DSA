@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -15,18 +16,23 @@ public class Streams {
         list.add(10);
         System.out.println(list);
 
+        // another ways of creating the above list
+        List<Integer> list2 = List.of(1, 2, 3, 4, 5);
+        List<Integer> list3 = Arrays.asList(1, 2, 3, 4, 5);
+
+
         // Convert the ArrayList into Square of numbers using stream()
-        System.out.println(list.stream().map(i -> i *i).collect(Collectors.toList()));
+        System.out.println(list.stream().map(i -> i *i).collect(Collectors.toList())); // map()
 
-        System.out.println(list.stream().map(i->i+(i+1)).collect(Collectors.toList()));
+        System.out.println(list.stream().map(i->i+(i+1)).collect(Collectors.toList())); // map()
 
-        System.out.println(list.stream().filter(e->e%2!=0).collect(Collectors.toList()));
+        System.out.println(list.stream().filter(e->e%2!=0).collect(Collectors.toList())); // filter()
 
-        System.out.println(list.stream().sorted().collect(Collectors.toList()));
+        System.out.println(list.stream().sorted().collect(Collectors.toList()));  // sorted()
 
-        System.out.println(list.stream().sorted().findFirst());
+        System.out.println(list.stream().sorted().findFirst()); // findFirst()
         
-        list.stream().forEach(e->System.out.println(e + "-"));
+        list.stream().forEach(e->System.out.println(e + "-")); // forEach()
         
         list.forEach(mul->{System.out.println(mul); System.out.println(mul); System.out.println(mul);});
 
