@@ -57,7 +57,7 @@ class LinkedList {
         System.out.println("null");
     }
 }
-public class CoreJavaPractice {
+public class LinkedList_SortListOf012 {
     public static void main(String[] args) {
         Node n1 = new Node(2);
         n1.next = new Node(1);
